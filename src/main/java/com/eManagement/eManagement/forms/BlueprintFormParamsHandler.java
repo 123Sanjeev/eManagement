@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class BlueprintFormParamsHandler {
 
-	
+	private String blueprintid;
 	private String location;
 	private String mastercoursename;
 	private String subject;
@@ -68,6 +68,12 @@ public class BlueprintFormParamsHandler {
 	}
 	public void setTotalmarks(double totalmarks) {
 		this.totalmarks = totalmarks;
+	}
+	public String getBlueprintid() {
+		return blueprintid;
+	}
+	public void setBlueprintid(String blueprintid) {
+		this.blueprintid = blueprintid;
 	}
 	
 }

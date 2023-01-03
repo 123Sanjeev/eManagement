@@ -13,6 +13,7 @@ import com.eManagement.eManagement.beans.BluePrintData;
 import com.eManagement.eManagement.beans.BluePrintMarksbean;
 import com.eManagement.eManagement.forms.BlueprintFormParamsHandler;
 import com.eManagement.eManagement.service.BluePrintService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 @CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @Controller
@@ -26,8 +27,15 @@ public class BlueprintController {
 	@ResponseBody
 //	public String createBlueprint(@RequestParam String location, @RequestParam String mastercoursename,
 //			@RequestParam String Subject, @RequestParam String term, @RequestParam String title,@RequestParam String option) {
-	public String createBlueprint(@RequestBody final BlueprintFormParamsHandler params ) {
+	public String createBlueprint(@RequestBody final BlueprintFormParamsHandler params) {
 		return bpService.createUpdateBlueprint(params);
+	}
+
+	@RequestMapping("/view")
+	@ResponseBody
+	public String viewBlueprint(@RequestBody final BlueprintFormParamsHandler params ) throws JsonProcessingException {
+		System.out.println(params.toString());
+		return this.bpService.getBluePrint();
 	}
 
 }

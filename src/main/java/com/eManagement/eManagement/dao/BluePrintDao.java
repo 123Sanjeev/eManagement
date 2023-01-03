@@ -1,8 +1,12 @@
 package com.eManagement.eManagement.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
+import org.json.JSONObject;
 import org.springframework.stereotype.Repository;
 
 import com.eManagement.eManagement.beans.BluePrintData;
@@ -53,6 +57,23 @@ public class BluePrintDao {
 		currentSession.saveOrUpdate(bluePrintTb);
 		
 		return String.valueOf(bluePrintTb.getId());
+	}
+
+
+	public List<BluePrintTb> getBlueprint() {
+		Session session = this.entityManager.unwrap(Session.class);
+		String query = "from BluePrintTb b";
+		@SuppressWarnings({ "rawtypes", "deprecation" })
+		Query hql = session.createQuery(query);
+		@SuppressWarnings({ "deprecation", "unchecked" })
+		List<BluePrintTb> list = (List<BluePrintTb>)hql.list();
+		
+		return list;
+		
+		
+		
+		
+		
 	}
 	
 	

@@ -1,165 +1,104 @@
-package com.eManagement.eManagement.entity;
+package com.eManagement.eManagement.beans;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@Entity
-@Table(name="blue_print_tb")
-public class BluePrintTb {
+public class BlueprintDto {
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="Id")
+	@JsonProperty("blueprintid")
 	private int id;
-	
-	@Column(name="location")
+	@JsonProperty("location")
 	private String location;
-	
-	@Column(name="masterCourseName")
+	@JsonProperty("masterCourseName")
 	private String masterCourseName;
-	
-	@Column(name="subject")
+	@JsonProperty("subject")
 	private String subject;
-	
-	@Column(name="term")
+	@JsonProperty("term")
 	private String term;
-	
-	@Column(name="title")
+	@JsonProperty("title")
 	private String title;
-	
-	@Column(name="option")
+	@JsonProperty("option")
 	private String option;
-	
-	@Column(name="createdBy")
+	@JsonProperty("createdBy")
 	private String createdBy;
-	
-	@Column(name="createdontimestamp")
+	@JsonProperty("createdOnTimeStamp")
 	private long createdOnTimeStamp;
-	
-	@Column(name="updatedontimestamp")
+	@JsonProperty("updatedOnTimeStamp")
 	private long updatedOnTimeStamp;
-	
-	@Column(name="updatedBy")
+	@JsonProperty("updatedBy")
 	private String updatedBy;
-	
-	@Column(name="status")
+	@JsonProperty("status")
 	private String status;
-
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "blueprint")
-	private Blueprintmarksdetails bpMarksDetails;
-	
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 	public String getLocation() {
 		return location;
 	}
-
 	public void setLocation(String location) {
 		this.location = location;
 	}
-
 	public String getMasterCourseName() {
 		return masterCourseName;
 	}
-
 	public void setMasterCourseName(String masterCourseName) {
 		this.masterCourseName = masterCourseName;
 	}
-
 	public String getSubject() {
 		return subject;
 	}
-
 	public void setSubject(String subject) {
 		this.subject = subject;
 	}
-
 	public String getTerm() {
 		return term;
 	}
-
 	public void setTerm(String term) {
 		this.term = term;
 	}
-
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 	public String getOption() {
 		return option;
 	}
-
 	public void setOption(String option) {
 		this.option = option;
 	}
-
 	public String getCreatedBy() {
 		return createdBy;
 	}
-
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
-
 	public long getCreatedOnTimeStamp() {
 		return createdOnTimeStamp;
 	}
-
 	public void setCreatedOnTimeStamp(long createdOnTimeStamp) {
 		this.createdOnTimeStamp = createdOnTimeStamp;
 	}
-
 	public long getUpdatedOnTimeStamp() {
 		return updatedOnTimeStamp;
 	}
-
 	public void setUpdatedOnTimeStamp(long updatedOnTimeStamp) {
 		this.updatedOnTimeStamp = updatedOnTimeStamp;
 	}
-
 	public String getUpdatedBy() {
 		return updatedBy;
 	}
-
-	public void setUpdatedBy(String string) {
-		this.updatedBy = string;
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
 	}
-
 	public String getStatus() {
 		return status;
 	}
-
 	public void setStatus(String status) {
 		this.status = status;
 	}
 
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public Blueprintmarksdetails getBpMarksDetails() {
-		return bpMarksDetails;
-	}
-
-	public void setBpMarksDetails(Blueprintmarksdetails bpMarksDetails) {
-		this.bpMarksDetails = bpMarksDetails;
-	}
-	
-	
-	
-	
 }
