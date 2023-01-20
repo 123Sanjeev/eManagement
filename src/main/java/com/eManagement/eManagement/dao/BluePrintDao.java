@@ -69,11 +69,13 @@ public class BluePrintDao {
 		List<BluePrintTb> list = (List<BluePrintTb>)hql.list();
 		
 		return list;
-		
-		
-		
-		
-		
+	}
+	public List<BluePrintTb> getBlueprint(String whereClause){
+		Session session = this.entityManager.unwrap(Session.class);
+		String query = "from BluePrintTb where "+ whereClause;
+		Query hql = session.createQuery(query);
+		List<BluePrintTb> list = (List<BluePrintTb>)hql.list();
+		return list;
 	}
 	
 	

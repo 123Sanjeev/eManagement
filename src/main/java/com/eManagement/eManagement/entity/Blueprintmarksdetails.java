@@ -126,6 +126,13 @@ public class Blueprintmarksdetails {
 	public void setTotalMarks(double totalMarks) {
 		this.totalMarks = totalMarks;
 	}
+
+	@Override
+	public String toString() {
+		return "Blueprintmarksdetails [id=" + id + ", blueprint=" + blueprint + ", FIBobjMarks=" + FIBobjMarks
+				+ ", FIBsubMarks=" + FIBsubMarks + ", VSAMarks=" + VSAMarks + ", SAMarks=" + SAMarks + ", LAMarks="
+				+ LAMarks + ", TFMarks=" + TFMarks + ", MCQMarks=" + MCQMarks + ", totalMarks=" + totalMarks + "]";
+	}
 	
 	
 }
