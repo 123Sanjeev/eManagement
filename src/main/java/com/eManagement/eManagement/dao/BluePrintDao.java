@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.json.JSONObject;
 import org.springframework.stereotype.Repository;
 
 import com.eManagement.eManagement.beans.BluePrintData;
