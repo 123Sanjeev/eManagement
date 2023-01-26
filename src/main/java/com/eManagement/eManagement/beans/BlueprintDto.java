@@ -28,6 +28,8 @@ public class BlueprintDto {
 	private String updatedBy;
 	@JsonProperty("status")
 	private String status;
+	@JsonProperty("totalMarks")
+	private double totalMarks;
 	public int getId() {
 		return id;
 	}
@@ -99,6 +101,18 @@ public class BlueprintDto {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	@Override
+	public String toString() {
+		return "BlueprintDto [id=" + id + ", location=" + location + ", masterCourseName=" + masterCourseName
+				+ ", subject=" + subject + ", term=" + term + ", title=" + title + ", option=" + option + ", createdBy="
+				+ createdBy + ", createdOnTimeStamp=" + createdOnTimeStamp + ", updatedOnTimeStamp="
+				+ updatedOnTimeStamp + ", updatedBy=" + updatedBy + ", status=" + status + ", totalMarks=" + totalMarks
+				+ "]";
+	}
+	public void setTotalMarks(double totalMarks) {
+		this.totalMarks = totalMarks;
 	}
 
 }

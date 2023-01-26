@@ -35,7 +35,7 @@ public class BlueprintController {
 	@ResponseBody
 	public String viewBlueprint(@RequestBody final BlueprintFormParamsHandler params ) throws JsonProcessingException {
 		System.out.println(params.toString());
-		return this.bpService.getBluePrint();
+		return this.bpService.getBluePrint(params);
 	}
 
 }

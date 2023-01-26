@@ -13,7 +13,7 @@ public class BlueprintFormParamsHandler {
 	private String term;
 	private double marks[];
 	private double totalmarks;
-	
+	private String status;
 	public String getLocation() {
 		return location;
 	}
@@ -74,6 +74,12 @@ public class BlueprintFormParamsHandler {
 	}
 	public void setBlueprintid(String blueprintid) {
 		this.blueprintid = blueprintid;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 }
