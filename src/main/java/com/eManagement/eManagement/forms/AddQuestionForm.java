@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class AddQuestionForm {
 
+	private int seq_id;
 	private String option;
 	private int questionid;
 	private String suboption;
@@ -77,10 +78,11 @@ public class AddQuestionForm {
 	}
 	@Override
 	public String toString() {
-		return "AddQuestionForm [option=" + option + ", suboption=" + suboption + ", category=" + category
-				+ ", subcategory=" + subcategory + ", question=" + questiondsc + ", tfoptions="
-				+ Arrays.toString(tfoptions) + ", mcqoptions=" + Arrays.toString(mcqoptions) + ", tfanswer=" + tfanswer
-				+ ", mcqanswer=" + mcqanswer + ", fibanswer=" + fibanswer + "]";
+		return "AddQuestionForm [seq_id=" + seq_id + ", option=" + option + ", questionid=" + questionid
+				+ ", suboption=" + suboption + ", category=" + category + ", subcategory=" + subcategory
+				+ ", questiondsc=" + questiondsc + ", tfoptions=" + Arrays.toString(tfoptions) + ", mcqoptions="
+				+ Arrays.toString(mcqoptions) + ", tfanswer=" + tfanswer + ", mcqanswer=" + mcqanswer + ", fibanswer="
+				+ fibanswer + "]";
 	}
 	public AddQuestionForm(String option, String suboption, String category, String subcategory, String questiondsc,
 			boolean[] tfoptions, String[] mcqoptions, String tfanswer, String mcqanswer, String fibanswer) {
@@ -101,6 +103,18 @@ public class AddQuestionForm {
 	}
 	public void setQuestionid(int questionid) {
 		this.questionid = questionid;
+	}
+	public int getSeq_id() {
+		return seq_id;
+	}
+	public void setSeq_id(int seq_id) {
+		this.seq_id = seq_id;
+	}
+	public String getQuestiondsc() {
+		return questiondsc;
+	}
+	public void setQuestiondsc(String questiondsc) {
+		this.questiondsc = questiondsc;
 	}
 	
 	
