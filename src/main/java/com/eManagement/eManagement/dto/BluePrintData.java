@@ -1,4 +1,4 @@
-package com.eManagement.eManagement.beans;
+package com.eManagement.eManagement.dto;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

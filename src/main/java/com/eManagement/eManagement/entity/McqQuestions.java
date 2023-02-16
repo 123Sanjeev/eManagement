@@ -39,20 +39,13 @@ public class McqQuestions {
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "question_id", nullable = true, unique = false)
 	private Question question;
-
-
-
 	public int getSeq_id() {
 		return seq_id;
 	}
-
-
-
+	
 	public void setSeq_id(int seq_id) {
 		this.seq_id = seq_id;
 	}
-
-
 
 	public String getOption1() {
 		return option1;
@@ -110,6 +103,12 @@ public class McqQuestions {
 
 	public void setQuestion(Question question) {
 		this.question = question;
+	}
+
+	@Override
+	public String toString() {
+		return "McqQuestions [seq_id=" + seq_id + ", option1=" + option1 + ", option2=" + option2 + ", option3="
+				+ option3 + ", option4=" + option4 + ", question=" + question + "]";
 	}
 	
 }

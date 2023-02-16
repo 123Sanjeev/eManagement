@@ -116,4 +116,12 @@ public class Question {
 		this.mcqQuestions = mcqQuestions;
 	}
 
+	@Override
+	public String toString() {
+		return "Question [seq_id=" + seq_id + ", questionid=" + questionid + ", questiondescription="
+				+ questiondescription + ", option=" + option + ", suboption=" + suboption + ", category=" + category
+				+ ", subcategory=" + subcategory + ", answer=" + answer + "]";
+	}
+
+
 }
