@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.eManagement.eManagement.beans.BluePrintData;
-import com.eManagement.eManagement.beans.BluePrintMarksbean;
-import com.eManagement.eManagement.beans.BlueprintDto;
 import com.eManagement.eManagement.dao.BluePrintDao;
+import com.eManagement.eManagement.dto.BluePrintData;
+import com.eManagement.eManagement.dto.BluePrintMarksbean;
+import com.eManagement.eManagement.dto.BlueprintDto;
 import com.eManagement.eManagement.entity.BluePrintTb;
 import com.eManagement.eManagement.forms.BlueprintFormParamsHandler;
 import com.fasterxml.jackson.core.JsonProcessingException;

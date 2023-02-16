@@ -1,4 +1,4 @@
-package com.eManagement.eManagement.beans;
+package com.eManagement.eManagement.dto;
 
 public class BluePrintMarksbean {
 
