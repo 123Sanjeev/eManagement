@@ -109,7 +109,6 @@ public class QuestionsDao{
 		//Clearing current session
 		clearSessions(session);
 		return question;
-		
 	}
 
 	public List<Question> getQuestionWithId(int id) {

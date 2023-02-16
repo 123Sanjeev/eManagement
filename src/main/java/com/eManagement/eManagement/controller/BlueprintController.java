@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.eManagement.eManagement.beans.BluePrintData;
-import com.eManagement.eManagement.beans.BluePrintMarksbean;
+import com.eManagement.eManagement.dto.BluePrintData;
+import com.eManagement.eManagement.dto.BluePrintMarksbean;
 import com.eManagement.eManagement.forms.BlueprintFormParamsHandler;
 import com.eManagement.eManagement.service.BluePrintService;
 import com.fasterxml.jackson.core.JsonProcessingException;

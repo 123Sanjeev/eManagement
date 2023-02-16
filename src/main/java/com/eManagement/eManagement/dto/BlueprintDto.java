@@ -1,4 +1,4 @@
-package com.eManagement.eManagement.beans;
+package com.eManagement.eManagement.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -8,7 +8,7 @@ public class BlueprintDto {
 	private int id;
 	@JsonProperty("location")
 	private String location;
-	@JsonProperty("masterCourseName")
+	@JsonProperty("mastercoursename")
 	private String masterCourseName;
 	@JsonProperty("subject")
 	private String subject;

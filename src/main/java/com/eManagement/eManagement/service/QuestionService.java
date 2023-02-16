@@ -7,9 +7,9 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.eManagement.eManagement.beans.McqQuestionDto;
-import com.eManagement.eManagement.beans.QuestionDto;
 import com.eManagement.eManagement.dao.QuestionsDao;
+import com.eManagement.eManagement.dto.McqQuestionDto;
+import com.eManagement.eManagement.dto.QuestionDto;
 import com.eManagement.eManagement.entity.McqQuestions;
 import com.eManagement.eManagement.entity.Question;
 import com.eManagement.eManagement.forms.AddQuestionForm;

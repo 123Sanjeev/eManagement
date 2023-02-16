@@ -8,8 +8,8 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
-import com.eManagement.eManagement.beans.BluePrintData;
-import com.eManagement.eManagement.beans.BluePrintMarksbean;
+import com.eManagement.eManagement.dto.BluePrintData;
+import com.eManagement.eManagement.dto.BluePrintMarksbean;
 import com.eManagement.eManagement.entity.BluePrintTb;
 import com.eManagement.eManagement.entity.Blueprintmarksdetails;
 
