@@ -1,0 +1,236 @@
+-- MariaDB dump 10.19  Distrib 10.4.24-MariaDB, for Win64 (AMD64)
+--
+-- Host: localhost    Database: emanagement
+-- ------------------------------------------------------
+-- Server version	10.4.24-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Sequence structure for `new_sequence`
+--
+
+DROP SEQUENCE IF EXISTS `new_sequence`;
+CREATE SEQUENCE `new_sequence` start with 1 minvalue 1 maxvalue 9223372036854775806 increment by 1 cache 1000 nocycle ENGINE=InnoDB;
+SELECT SETVAL(`new_sequence`, 1, 0);
+
+--
+-- Table structure for table `blue_print_marks_details`
+--
+
+DROP TABLE IF EXISTS `blue_print_marks_details`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `blue_print_marks_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fib_obj` double DEFAULT NULL,
+  `fib_sub` double DEFAULT NULL,
+  `la` double DEFAULT NULL,
+  `mcq` double DEFAULT NULL,
+  `sa` double DEFAULT NULL,
+  `tf` double DEFAULT NULL,
+  `vsa` double DEFAULT NULL,
+  `totalmarks` double DEFAULT NULL,
+  `blueprint_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_63hxnfhy0w7l5p92xoh566c6k` (`blueprint_id`),
+  CONSTRAINT `FKs7p7tf5kymf1r34gyaukya3pw` FOREIGN KEY (`blueprint_id`) REFERENCES `blue_print_tb` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `blue_print_tb`
+--
+
+DROP TABLE IF EXISTS `blue_print_tb`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `blue_print_tb` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created_by` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `createdontimestamp` bigint(20) DEFAULT NULL,
+  `location` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `master_course_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `option` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `status` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `subject` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `term` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `updated_by` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `updatedontimestamp` bigint(20) DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `mcq_questions`
+--
+
+DROP TABLE IF EXISTS `mcq_questions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mcq_questions` (
+  `seq_id` int(11) NOT NULL AUTO_INCREMENT,
+  `option_1` varchar(255) DEFAULT NULL,
+  `option_2` varchar(255) DEFAULT NULL,
+  `option_3` varchar(255) DEFAULT NULL,
+  `option_4` varchar(255) DEFAULT NULL,
+  `question_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`seq_id`),
+  KEY `FKn1rr43ymm4rtx6tdtry5flv2o` (`question_id`),
+  CONSTRAINT `FKn1rr43ymm4rtx6tdtry5flv2o` FOREIGN KEY (`question_id`) REFERENCES `question` (`seq_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `question`
+--
+
+DROP TABLE IF EXISTS `question`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `question` (
+  `seq_id` int(11) NOT NULL AUTO_INCREMENT,
+  `answer` varchar(255) DEFAULT NULL,
+  `category` varchar(255) DEFAULT NULL,
+  `option` varchar(255) DEFAULT NULL,
+  `question_desc` varchar(255) DEFAULT NULL,
+  `questionid` int(11) DEFAULT NULL,
+  `subcategory` varchar(255) DEFAULT NULL,
+  `suboption` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`seq_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `roles`
+--
+
+DROP TABLE IF EXISTS `roles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `roles` (
+  `roleid` int(11) NOT NULL AUTO_INCREMENT,
+  `rolename` varchar(255) DEFAULT NULL,
+  `timecreated` bigint(20) DEFAULT NULL,
+  `timeupdated` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`roleid`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `user_roles`
+--
+
+DROP TABLE IF EXISTS `user_roles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_roles` (
+  `roleid` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  KEY `FK6qgn9xtttlujey5sa2j7qow4d` (`userid`),
+  KEY `FKmet9tvqxk3rk51yhrcje7dwd5` (`roleid`),
+  CONSTRAINT `FK6qgn9xtttlujey5sa2j7qow4d` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`),
+  CONSTRAINT `FKmet9tvqxk3rk51yhrcje7dwd5` FOREIGN KEY (`roleid`) REFERENCES `roles` (`roleid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `userid` int(11) NOT NULL AUTO_INCREMENT,
+  `location` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `timecreated` bigint(20) DEFAULT NULL,
+  `timeupdated` bigint(20) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `users_roles`
+--
+
+DROP TABLE IF EXISTS `users_roles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_roles` (
+  `user_userid` int(11) NOT NULL,
+  `roles_roleid` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  KEY `FK8wvn2euuxv9igsp8jh5ehu1mt` (`roles_roleid`),
+  KEY `FKa447bcrqmmjlpn3gnn89gstbl` (`user_userid`),
+  CONSTRAINT `FK8wvn2euuxv9igsp8jh5ehu1mt` FOREIGN KEY (`roles_roleid`) REFERENCES `roles` (`roleid`),
+  CONSTRAINT `FKa447bcrqmmjlpn3gnn89gstbl` FOREIGN KEY (`user_userid`) REFERENCES `users` (`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `workflow_assignment`
+--
+
+DROP TABLE IF EXISTS `workflow_assignment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `workflow_assignment` (
+  `assignmentid` int(11) NOT NULL AUTO_INCREMENT,
+  `createdby` bigint(20) DEFAULT NULL,
+  `role` varchar(255) DEFAULT NULL,
+  `timecreated` bigint(20) DEFAULT NULL,
+  `timeupdated` bigint(20) DEFAULT NULL,
+  `updatedby` bigint(20) DEFAULT NULL,
+  `userid` bigint(20) DEFAULT NULL,
+  `process_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`assignmentid`),
+  KEY `FK23yqknvuak21ng3ujbc165nuq` (`process_id`),
+  CONSTRAINT `FK23yqknvuak21ng3ujbc165nuq` FOREIGN KEY (`process_id`) REFERENCES `workflow_process` (`processid`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `workflow_process`
+--
+
+DROP TABLE IF EXISTS `workflow_process`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `workflow_process` (
+  `processid` int(11) NOT NULL AUTO_INCREMENT,
+  `app` varchar(255) DEFAULT NULL,
+  `ownerid` bigint(20) DEFAULT NULL,
+  `timecreated` bigint(20) DEFAULT NULL,
+  `timeupdated` bigint(20) DEFAULT NULL,
+  `updatedby` bigint(20) DEFAULT NULL,
+  `memo` varchar(255) DEFAULT NULL,
+  `pending_with` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`processid`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-02-27 18:46:51
